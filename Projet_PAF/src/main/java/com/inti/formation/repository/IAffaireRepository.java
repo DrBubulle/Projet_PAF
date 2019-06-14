@@ -1,5 +1,11 @@
 package com.inti.formation.repository;
 
-public interface IAffaireRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import com.inti.formation.Model.Affaire;
+
+@Repository("affaireRepo")
+public interface IAffaireRepository extends JpaRepository<Affaire, Long> {
 
 }
