@@ -14,7 +14,7 @@ import com.inti.formation.repository.IAffaireRepository;
 public class AffaireMetier implements IAffaireMetier {
 	
 	@Autowired
-	@Qualifier("afrepo")
+	@Qualifier("affaireRepo")
 	private IAffaireRepository afrepo;
 
 	public IAffaireRepository getAfrepo() {
