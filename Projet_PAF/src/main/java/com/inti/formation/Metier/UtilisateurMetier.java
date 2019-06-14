@@ -1,5 +1,5 @@
 package com.inti.formation.Metier;
 
-public class Generic {
+public class UtilisateurMetier {
 
 }
