@@ -2,6 +2,10 @@ package com.inti.formation.Model;
 
 import java.io.Serializable;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Phase implements Serializable {
 
 	/**
@@ -9,12 +13,13 @@ public class Phase implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 	
+	@Id
 	private long idPhase;
 	private String nom;
 	private String dateDebut;
 	private String dateFin;
 	
-	//cosntructeurs
+	//Constructeurs
 	public Phase() {
 		super();
 	}
