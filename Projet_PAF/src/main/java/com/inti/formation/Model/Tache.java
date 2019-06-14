@@ -1,33 +1,37 @@
 package com.inti.formation.Model;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class Tache {
+public class Tache implements Serializable {
+	
+	private static final long serialVersionUID = 1L;
 	
 	@Id
-	private int idTache;
+	private long idTache;
 	private String dateCreation;
 	private String titre;
 	private String description;
-	private boolean statuAudience;
+	private boolean statutAudience;
 	
 	public Tache() {
 		super();
 	}
-	public Tache(int idTache, String dateCreation, String titre, String description, boolean statuAudience) {
+	public Tache(long idTache, String dateCreation, String titre, String description, boolean statutAudience) {
 		super();
 		this.idTache = idTache;
 		this.dateCreation = dateCreation;
 		this.titre = titre;
 		this.description = description;
-		this.statuAudience = statuAudience;
+		this.statutAudience = statutAudience;
 	}
-	public int getIdTache() {
+	public long getIdTache() {
 		return idTache;
 	}
-	public void setIdTache(int idTache) {
+	public void setIdTache(long idTache) {
 		this.idTache = idTache;
 	}
 	public String getDateCreation() {
@@ -48,18 +52,17 @@ public class Tache {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public boolean isStatuAudience() {
-		return statuAudience;
+	public boolean isStatutAudience() {
+		return statutAudience;
 	}
-	public void setStatuAudience(boolean statuAudience) {
-		this.statuAudience = statuAudience;
+	public void setStatutAudience(boolean statutAudience) {
+		this.statutAudience = statutAudience;
 	}
-	
+	@Override
 	public String toString() {
 		return "Tache [idTache=" + idTache + ", dateCreation=" + dateCreation + ", titre=" + titre + ", description="
-				+ description + ", statuAudience=" + statuAudience + "]";
+				+ description + ", statutAudience=" + statutAudience + "]";
 	}
-	
 	
 
 }
