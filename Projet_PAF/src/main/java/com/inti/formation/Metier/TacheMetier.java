@@ -46,16 +46,16 @@ public class TacheMetier implements ITacheMetier {
 				
 	}
 
-	@Override
+	
 	public Tache findOne(Long id) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return tacherepo.getOne(id);
 	}
 
-	@Override
+	
 	public List<Tache> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return tacherepo.findAll();
 	}
 
 }

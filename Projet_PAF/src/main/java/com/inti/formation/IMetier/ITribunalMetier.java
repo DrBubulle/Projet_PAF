@@ -1,5 +1,7 @@
 package com.inti.formation.IMetier;
 
-public interface ITribunalMetier {
+import com.inti.formation.Model.Tribunal;
+
+public interface ITribunalMetier extends IGenericMetier<Tribunal, Long> {
 
 }
