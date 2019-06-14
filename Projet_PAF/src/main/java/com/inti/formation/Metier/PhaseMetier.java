@@ -4,11 +4,13 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
 
 import com.inti.formation.IMetier.IPhaseMetier;
 import com.inti.formation.Model.Phase;
 import com.inti.formation.repository.IPhaseRepository;
 
+@Service
 public class PhaseMetier implements IPhaseMetier {
 
 	@Autowired
