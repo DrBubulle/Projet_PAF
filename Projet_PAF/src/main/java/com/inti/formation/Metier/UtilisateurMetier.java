@@ -17,12 +17,14 @@ public class UtilisateurMetier implements IUtilisateurMetier{
 	@Qualifier("utRepo")
 	private IUtilisateurRepository utRepo;
 
-	public IUtilisateurRepository getRepo() {
+	
+
+	public IUtilisateurRepository getUtRepo() {
 		return utRepo;
 	}
 
-	public void setRepo(IUtilisateurRepository repo) {
-		this.utRepo = repo;
+	public void setUtRepo(IUtilisateurRepository utRepo) {
+		this.utRepo = utRepo;
 	}
 
 	@Override
@@ -37,24 +39,23 @@ public class UtilisateurMetier implements IUtilisateurMetier{
 		return utRepo.save(a);
 	}
 
-	@Override
-	public void delete(Integer idUtilisateur) {
-		utRepo.deleteById(idUtilisateur);
+		@Override
+	public void delete(Long idUtilisateur) {
+		utRepo.deleteById(idUtilisateur);;
 		
 	}
 
 	@Override
-	public Utilisateur findOne(Integer idUtilisateur) {
+	public Utilisateur findOne(Long idUtilisateur) {
 		
 		return utRepo.getOne(idUtilisateur);
 	}
-
+	
 	@Override
 	public List<Utilisateur> findAll() {
 		
 		return utRepo.findAll();
 	}
-	
-	
-	
+
+		
 }

@@ -39,13 +39,13 @@ public class DocumentMetier implements IDocumentMetier{
 	}
 
 	@Override
-	public void delete(Integer idDocument) {
+	public void delete(Long idDocument) {
 		docRepo.deleteById(idDocument);
 		
 	}
 
 	@Override
-	public Document findOne(Integer idDocument) {
+	public Document findOne(Long idDocument) {
 		
 		return docRepo.getOne(idDocument);
 	}

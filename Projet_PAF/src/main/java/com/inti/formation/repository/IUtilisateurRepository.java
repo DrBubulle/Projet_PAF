@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.inti.formation.Model.Utilisateur;
 
 @Repository("utRepo")
-public interface IUtilisateurRepository extends JpaRepository<Utilisateur, Integer> {
+public interface IUtilisateurRepository extends JpaRepository<Utilisateur, Long> {
 
 }
