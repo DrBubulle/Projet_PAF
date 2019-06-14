@@ -14,7 +14,7 @@ public class Utilisateur implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	private long IdUtilisateur;
+	private long idUtilisateur;
 	private String email;
 	private String nom;
 	private String prenom;
@@ -23,20 +23,28 @@ public class Utilisateur implements Serializable{
 		super(); 
 	}
 
+
+
+	
+
 	public Utilisateur(long idUtilisateur, String email, String nom, String prenom) {
 		super();
-		IdUtilisateur = idUtilisateur;
+		this.idUtilisateur = idUtilisateur;
 		this.email = email;
 		this.nom = nom;
 		this.prenom = prenom;
 	}
 
+
+
+
+
 	public long getIdUtilisateur() {
-		return IdUtilisateur;
+		return idUtilisateur;
 	}
 
 	public void setIdUtilisateur(long idUtilisateur) {
-		IdUtilisateur = idUtilisateur;
+		this.idUtilisateur = idUtilisateur;
 	}
 
 	public String getEmail() {
@@ -65,7 +73,7 @@ public class Utilisateur implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Utilisateur [IdUtilisateur=" + IdUtilisateur + ", email=" + email + ", nom=" + nom + ", prenom="
+		return "Utilisateur [IdUtilisateur=" + idUtilisateur + ", email=" + email + ", nom=" + nom + ", prenom="
 				+ prenom + "]";
 	}
 	
