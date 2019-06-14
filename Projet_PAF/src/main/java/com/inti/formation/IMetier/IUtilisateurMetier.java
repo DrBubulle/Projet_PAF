@@ -1,5 +1,7 @@
 package com.inti.formation.IMetier;
 
-public interface IUtilisateurMetier {
+import com.inti.formation.Model.Utilisateur;
+
+public interface IUtilisateurMetier extends  IGenericMetier<Utilisateur, Integer> {
 
 }

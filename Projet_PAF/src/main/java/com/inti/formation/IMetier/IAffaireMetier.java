@@ -1,5 +1,7 @@
 package com.inti.formation.IMetier;
 
-public interface IAffaireMetier {
+import com.inti.formation.Model.Affaire;
+
+public interface IAffaireMetier extends IGenericMetier<Affaire, Integer> {
 
 }

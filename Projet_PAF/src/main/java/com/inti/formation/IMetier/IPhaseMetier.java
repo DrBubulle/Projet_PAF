@@ -1,5 +1,7 @@
 package com.inti.formation.IMetier;
 
-public interface IPhaseMetier {
+import com.inti.formation.Model.Phase;
+
+public interface IPhaseMetier extends IGenericMetier<Phase, Integer> {
 
 }
