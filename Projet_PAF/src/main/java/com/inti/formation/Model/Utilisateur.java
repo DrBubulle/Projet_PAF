@@ -4,4 +4,6 @@ public class Utilisateur {
 
 	
 	private int IdUtilisateur;
+	private String email;
+	
 }
