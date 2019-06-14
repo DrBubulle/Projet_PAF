@@ -1,5 +1,7 @@
 package com.inti.formation.IMetier;
 
-public interface ITacheMetier {
+import com.inti.formation.Model.Tache;
+
+public interface ITacheMetier extends IGenericMetier<Tache, Long>{
 
 }
