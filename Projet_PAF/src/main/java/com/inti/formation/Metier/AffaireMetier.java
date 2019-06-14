@@ -8,50 +8,50 @@ import org.springframework.stereotype.Service;
 
 import com.inti.formation.IMetier.IAffaireMetier;
 import com.inti.formation.Model.Affaire;
+import com.inti.formation.repository.IAffaireRepository;
 
 @Service
 public class AffaireMetier implements IAffaireMetier {
 	
 	@Autowired
 	@Qualifier("afrepo")
-	private IAffaireMetier afrepo;
-	
-	public IAffaireMetier getAfrepo() {
+	private IAffaireRepository afrepo;
+
+	public IAffaireRepository getAfrepo() {
 		return afrepo;
 	}
 
-	public void setAfrepo(IAffaireMetier afrepo) {
+	public void setAfrepo(IAffaireRepository afrepo) {
 		this.afrepo = afrepo;
 	}
 
 	@Override
 	public Affaire ajouter(Affaire a) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return afrepo.save(a);
 	}
 
 	@Override
 	public Affaire update(Affaire a) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return afrepo.save(a);
 	}
 
 	@Override
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
+		afrepo.deleteById(id);
 		
 	}
 
 	@Override
 	public Affaire findOne(Long id) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return afrepo.getOne(id);
 	}
 
 	@Override
 	public List<Affaire> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+		return afrepo.findAll();
 	}
 
 	

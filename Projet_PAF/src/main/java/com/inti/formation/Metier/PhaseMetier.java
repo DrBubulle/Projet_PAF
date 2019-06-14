@@ -7,41 +7,47 @@ import org.springframework.beans.factory.annotation.Qualifier;
 
 import com.inti.formation.IMetier.IPhaseMetier;
 import com.inti.formation.Model.Phase;
+import com.inti.formation.repository.IPhaseRepository;
 
 public class PhaseMetier implements IPhaseMetier {
 
 	@Autowired
 	@Qualifier("phrepo")
-	private IPhaseMetier phrepo;
+	private IPhaseRepository phrepo;
 	
+	
+	public IPhaseRepository getPhrepo() {
+		return phrepo;
+	}
+
+	public void setPhrepo(IPhaseRepository phrepo) {
+		this.phrepo = phrepo;
+	}
+
 	@Override
 	public Phase ajouter(Phase a) {
-		// TODO Auto-generated method stub
-		return null;
+		return phrepo.save(a);
 	}
 
 	@Override
 	public Phase update(Phase a) {
-		// TODO Auto-generated method stub
-		return null;
+		return phrepo.save(a);
 	}
 
 	@Override
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
+		phrepo.deleteById(id);
 		
 	}
 
 	@Override
 	public Phase findOne(Long id) {
-		// TODO Auto-generated method stub
-		return null;
+		return phrepo.getOne(id);
 	}
 
 	@Override
 	public List<Phase> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+		return phrepo.findAll();
 	}
 
 	
