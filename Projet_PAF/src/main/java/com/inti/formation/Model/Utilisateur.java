@@ -7,6 +7,8 @@ public class Utilisateur {
 	private String email;
 	private String nom;
 	private String prenom;
+	private String testmaryssa;
+	
 
 	
 	
