@@ -42,7 +42,8 @@ public class TacheMetier implements ITacheMetier {
 	
 	public void delete(Long id) {
 		
-		
+		tacherepo.deleteById(id);
+				
 	}
 
 	@Override
