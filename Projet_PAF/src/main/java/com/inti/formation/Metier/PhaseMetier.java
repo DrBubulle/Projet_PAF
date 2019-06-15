@@ -14,7 +14,7 @@ import com.inti.formation.repository.IPhaseRepository;
 public class PhaseMetier implements IPhaseMetier {
 
 	@Autowired
-	@Qualifier("phrepo")
+	@Qualifier("phaseRepo")
 	private IPhaseRepository phrepo;
 	
 	

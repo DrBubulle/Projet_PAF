@@ -14,7 +14,7 @@ import com.inti.formation.repository.IUtilisateurRepository;
 public class UtilisateurMetier implements IUtilisateurMetier{
 
 	@Autowired
-	@Qualifier("utRepo")
+	@Qualifier("utilisateurRepo")
 	private IUtilisateurRepository utRepo;
 
 	
