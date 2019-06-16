@@ -14,7 +14,7 @@ import com.inti.formation.repository.IAffaireRepository;
 public class AffaireMetier implements IAffaireMetier {
 	
 	@Autowired
-	@Qualifier("affaireRepo")
+	@Qualifier("afRepo")
 	private IAffaireRepository afrepo;
 
 	public IAffaireRepository getAfrepo() {
@@ -38,15 +38,15 @@ public class AffaireMetier implements IAffaireMetier {
 	}
 
 	@Override
-	public void delete(Long id) {
-		afrepo.deleteById(id);
+	public void delete(Long idAffaire) {
+		afrepo.deleteById(idAffaire);
 		
 	}
 
 	@Override
-	public Affaire findOne(Long id) {
+	public Affaire findOne(Long idAffaire) {
 		
-		return afrepo.getOne(id);
+		return afrepo.getOne(idAffaire);
 	}
 
 	@Override

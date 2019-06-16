@@ -14,7 +14,7 @@ import com.inti.formation.repository.IPhaseRepository;
 public class PhaseMetier implements IPhaseMetier {
 
 	@Autowired
-	@Qualifier("phaseRepo")
+	@Qualifier("phRepo")
 	private IPhaseRepository phrepo;
 	
 	
@@ -37,14 +37,14 @@ public class PhaseMetier implements IPhaseMetier {
 	}
 
 	@Override
-	public void delete(Long id) {
-		phrepo.deleteById(id);
+	public void delete(Long idPhase) {
+		phrepo.deleteById(idPhase);
 		
 	}
 
 	@Override
-	public Phase findOne(Long id) {
-		return phrepo.getOne(id);
+	public Phase findOne(Long idPhase) {
+		return phrepo.getOne(idPhase);
 	}
 
 	@Override
