@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import com.inti.formation.Model.Affaire;
 
-@Repository("affaireRepo")
+@Repository("afRepo")
 public interface IAffaireRepository extends JpaRepository<Affaire, Long> {
 
 }

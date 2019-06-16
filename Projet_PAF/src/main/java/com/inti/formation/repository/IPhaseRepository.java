@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import com.inti.formation.Model.Phase;
 
-@Repository("phaseRepo")
+@Repository("phRepo")
 public interface IPhaseRepository extends JpaRepository<Phase, Long> {
 
 }
