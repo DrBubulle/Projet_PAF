@@ -1,9 +1,13 @@
 package com.inti.formation.Model;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Tribunal implements Serializable {
@@ -12,11 +16,17 @@ public class Tribunal implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long idTribunal;
+	
 	private String adresse;
 	private double fax;
 	private double tel;
 	private String region;
+	
+	@OneToMany(mappedBy="tribunal")
+	private List<Tache> taches;
+	
 	
 	public Tribunal() {
 		super();
@@ -29,6 +39,15 @@ public class Tribunal implements Serializable {
 		this.fax = fax;
 		this.tel = tel;
 		this.region = region;
+	}
+
+	
+	public List<Tache> getTaches() {
+		return taches;
+	}
+
+	public void setTaches(List<Tache> taches) {
+		this.taches = taches;
 	}
 
 	public long getIdTribunal() {

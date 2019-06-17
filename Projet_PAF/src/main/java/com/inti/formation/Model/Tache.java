@@ -1,21 +1,45 @@
 package com.inti.formation.Model;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Tache implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	
+
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long idTache;
+	
 	private String dateCreation;
 	private String titre;
 	private String description;
 	private boolean statutAudience;
+	
+	@ManyToMany (mappedBy="taches")
+	private List <Utilisateur> utilisateurs;
+	
+	@ManyToOne
+	@JoinColumn(name="idAffaire")
+	private Affaire affaire;
+	
+	@ManyToOne
+	@JoinColumn(name="idTribunal")
+	private Tribunal tribunal;
+	
+	@OneToMany(mappedBy="tache")
+	private List<Phase> phases;
 	
 	public Tache() {
 		super();
@@ -27,6 +51,20 @@ public class Tache implements Serializable {
 		this.titre = titre;
 		this.description = description;
 		this.statutAudience = statutAudience;
+	}
+	
+	
+	public List<Phase> getPhases() {
+		return phases;
+	}
+	public void setPhases(List<Phase> phases) {
+		this.phases = phases;
+	}
+	public List<Utilisateur> getUtilisateurs() {
+		return utilisateurs;
+	}
+	public void setUtilisateurs(List<Utilisateur> utilisateurs) {
+		this.utilisateurs = utilisateurs;
 	}
 	public long getIdTache() {
 		return idTache;

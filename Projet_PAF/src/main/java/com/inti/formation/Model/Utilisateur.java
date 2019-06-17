@@ -1,9 +1,15 @@
 package com.inti.formation.Model;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 
 @Entity
 public class Utilisateur implements Serializable{
@@ -14,18 +20,30 @@ public class Utilisateur implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long idUtilisateur;
+	
 	private String email;
 	private String nom;
 	private String prenom;
+	
+
+	@ManyToMany
+	@JoinTable(name="TacheUtil", joinColumns=@JoinColumn(name="idTache"),
+	inverseJoinColumns=@JoinColumn(name="idUtilisateur"))
+	private List<Tache> taches;
 	
 	public Utilisateur() {
 		super(); 
 	}
 
+	public List<Tache> getTaches() {
+		return taches;
+	}
+	public void setTaches(List<Tache> taches) {
+		this.taches = taches;
+	}
 
-
-	
 
 	public Utilisateur(long idUtilisateur, String email, String nom, String prenom) {
 		super();
