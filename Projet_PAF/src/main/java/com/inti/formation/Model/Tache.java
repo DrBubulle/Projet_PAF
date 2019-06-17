@@ -12,7 +12,10 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Entity
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Tache implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
@@ -54,6 +57,17 @@ public class Tache implements Serializable {
 	}
 	
 	
+	
+	public Tache(String dateCreation, String titre, String description, boolean statutAudience, Affaire affaire,
+			Tribunal tribunal) {
+		super();
+		this.dateCreation = dateCreation;
+		this.titre = titre;
+		this.description = description;
+		this.statutAudience = statutAudience;
+		this.affaire = affaire;
+		this.tribunal = tribunal;
+	}
 	public List<Phase> getPhases() {
 		return phases;
 	}
@@ -98,9 +112,12 @@ public class Tache implements Serializable {
 	}
 	@Override
 	public String toString() {
-		return "Tache [idTache=" + idTache + ", dateCreation=" + dateCreation + ", titre=" + titre + ", description="
-				+ description + ", statutAudience=" + statutAudience + "]";
+		return "Tache [dateCreation=" + dateCreation + ", titre=" + titre + ", description=" + description
+				+ ", statutAudience=" + statutAudience + "]";
 	}
+	
+	
+	
 	
 
 }

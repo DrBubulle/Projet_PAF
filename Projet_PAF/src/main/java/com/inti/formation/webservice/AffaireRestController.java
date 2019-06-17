@@ -2,6 +2,7 @@ package com.inti.formation.webservice;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -17,6 +18,7 @@ import com.inti.formation.Model.Affaire;
 @RequestMapping("/apiAffaire")
 public class AffaireRestController {
 
+	@Autowired
 	private IAffaireMetier metier;
 
 	public IAffaireMetier getMetier() {

@@ -9,7 +9,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Entity
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Affaire implements Serializable {
 	
 	
@@ -38,10 +41,24 @@ public class Affaire implements Serializable {
 		super();
 	}
 	
+	
 
 	public List<Document> getDocuments() {
 		return documents;
 	}
+
+
+	public Affaire(String reference, String titre, String description, String status, List<Tache> taches,
+			List<Document> documents) {
+		super();
+		this.reference = reference;
+		this.titre = titre;
+		this.description = description;
+		this.status = status;
+		this.taches = taches;
+		this.documents = documents;
+	}
+
 
 
 	public void setDocuments(List<Document> documents) {
