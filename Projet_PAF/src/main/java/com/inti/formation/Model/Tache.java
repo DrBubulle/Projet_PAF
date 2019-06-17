@@ -58,6 +58,13 @@ public class Tache implements Serializable {
 	
 	
 	
+	public Tache(String dateCreation, String titre, String description, boolean statutAudience) {
+		super();
+		this.dateCreation = dateCreation;
+		this.titre = titre;
+		this.description = description;
+		this.statutAudience = statutAudience;
+	}
 	public Tache(String dateCreation, String titre, String description, boolean statutAudience, Affaire affaire,
 			Tribunal tribunal) {
 		super();

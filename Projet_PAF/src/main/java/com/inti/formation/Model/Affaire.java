@@ -61,6 +61,16 @@ public class Affaire implements Serializable {
 
 
 
+	public Affaire(String reference, String titre, String description, String status) {
+		super();
+		this.reference = reference;
+		this.titre = titre;
+		this.description = description;
+		this.status = status;
+	}
+
+
+
 	public void setDocuments(List<Document> documents) {
 		this.documents = documents;
 	}
