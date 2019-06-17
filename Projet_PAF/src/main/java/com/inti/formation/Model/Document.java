@@ -11,7 +11,10 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Entity
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Document implements Serializable{
 
 	/**
@@ -41,6 +44,20 @@ public class Document implements Serializable{
 		this.description = description;
 	}
 	
+	
+	public Document(String dateCreation, String nom, String description) {
+		super();
+		this.dateCreation = dateCreation;
+		this.nom = nom;
+		this.description = description;
+	}
+	public Document(String dateCreation, String nom, String description, Affaire affaire) {
+		super();
+		this.dateCreation = dateCreation;
+		this.nom = nom;
+		this.description = description;
+		this.affaire = affaire;
+	}
 	public long getIdDocument() {
 		return idDocument;
 	}

@@ -9,7 +9,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Entity
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Tribunal implements Serializable {
 
 
@@ -42,6 +45,15 @@ public class Tribunal implements Serializable {
 	}
 
 	
+	public Tribunal(String adresse, double fax, double tel, String region, List<Tache> taches) {
+		super();
+		this.adresse = adresse;
+		this.fax = fax;
+		this.tel = tel;
+		this.region = region;
+		this.taches = taches;
+	}
+
 	public List<Tache> getTaches() {
 		return taches;
 	}
