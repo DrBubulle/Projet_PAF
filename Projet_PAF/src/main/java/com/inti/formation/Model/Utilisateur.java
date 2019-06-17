@@ -11,7 +11,10 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Entity
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Utilisateur implements Serializable{
 
 	/**
@@ -54,8 +57,20 @@ public class Utilisateur implements Serializable{
 	}
 
 
+	public Utilisateur(String email, String nom, String prenom) {
+		super();
+		this.email = email;
+		this.nom = nom;
+		this.prenom = prenom;
+	}
 
-
+	public Utilisateur(String email, String nom, String prenom, List<Tache> taches) {
+		super();
+		this.email = email;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.taches = taches;
+	}
 
 	public long getIdUtilisateur() {
 		return idUtilisateur;

@@ -9,7 +9,10 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Entity
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Phase implements Serializable {
 
 	/**
@@ -41,6 +44,21 @@ public class Phase implements Serializable {
 		this.dateFin = dateFin;
 	}
 	
+	
+	
+	public Phase(String nom, String dateDebut, String dateFin) {
+		super();
+		this.nom = nom;
+		this.dateDebut = dateDebut;
+		this.dateFin = dateFin;
+	}
+	public Phase(String nom, String dateDebut, String dateFin, Tache tache) {
+		super();
+		this.nom = nom;
+		this.dateDebut = dateDebut;
+		this.dateFin = dateFin;
+		this.tache = tache;
+	}
 	//Getters and Setters
 	public long getIdPhase() {
 		return idPhase;
