@@ -54,6 +54,14 @@ public class Tribunal implements Serializable {
 		this.taches = taches;
 	}
 
+	public Tribunal(String adresse, double fax, double tel, String region) {
+		super();
+		this.adresse = adresse;
+		this.fax = fax;
+		this.tel = tel;
+		this.region = region;
+	}
+
 	public List<Tache> getTaches() {
 		return taches;
 	}

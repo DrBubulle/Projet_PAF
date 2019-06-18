@@ -28,7 +28,7 @@ public class Affaire implements Serializable {
 	private String reference;
 	private String titre;
 	private String description;
-	private String status;
+	private int status;
 	
 	@OneToMany(mappedBy="affaire")
 	private List<Tache> taches;
@@ -48,7 +48,7 @@ public class Affaire implements Serializable {
 	}
 
 
-	public Affaire(String reference, String titre, String description, String status, List<Tache> taches,
+	public Affaire(String reference, String titre, String description, int status, List<Tache> taches,
 			List<Document> documents) {
 		super();
 		this.reference = reference;
@@ -61,7 +61,7 @@ public class Affaire implements Serializable {
 
 
 
-	public Affaire(String reference, String titre, String description, String status) {
+	public Affaire(String reference, String titre, String description, int status) {
 		super();
 		this.reference = reference;
 		this.titre = titre;
@@ -85,7 +85,7 @@ public class Affaire implements Serializable {
 	}
 
 
-	public Affaire(long idAffaire, String reference, String titre, String description, String status) {
+	public Affaire(long idAffaire, String reference, String titre, String description, int status) {
 		super();
 		this.idAffaire = idAffaire;
 		this.reference = reference;
@@ -135,12 +135,12 @@ public class Affaire implements Serializable {
 	}
 
 
-	public String getStatus() {
+	public int getStatus() {
 		return status;
 	}
 
 
-	public void setStatus(String status) {
+	public void setStatus(int status) {
 		this.status = status;
 	}
 
