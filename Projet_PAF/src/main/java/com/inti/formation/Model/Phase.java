@@ -93,6 +93,12 @@ public class Phase implements Serializable {
 	public String toString() {
 		return "Phase [idPhase=" + idPhase + ", nom=" + nom + ", dateDebut=" + dateDebut + ", dateFin=" + dateFin + "]";
 	}
+	public Tache getTache() {
+		return tache;
+	}
+	public void setTache(Tache tache) {
+		this.tache = tache;
+	}
 	
 	
 

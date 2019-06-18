@@ -16,6 +16,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+
 public class Tache implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
@@ -121,6 +122,18 @@ public class Tache implements Serializable {
 	public String toString() {
 		return "Tache [dateCreation=" + dateCreation + ", titre=" + titre + ", description=" + description
 				+ ", statutAudience=" + statutAudience + "]";
+	}
+	public Affaire getAffaire() {
+		return affaire;
+	}
+	public void setAffaire(Affaire affaire) {
+		this.affaire = affaire;
+	}
+	public Tribunal getTribunal() {
+		return tribunal;
+	}
+	public void setTribunal(Tribunal tribunal) {
+		this.tribunal = tribunal;
 	}
 	
 	

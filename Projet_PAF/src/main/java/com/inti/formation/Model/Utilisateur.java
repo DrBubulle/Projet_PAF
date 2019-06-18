@@ -23,7 +23,9 @@ public class Utilisateur implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	//@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = javax.persistence.GenerationType.IDENTITY )
+//	@GeneratedValue(strategy = javax.persistence.GenerationType.AUTO)
 	private long idUtilisateur;
 	
 	private String email;

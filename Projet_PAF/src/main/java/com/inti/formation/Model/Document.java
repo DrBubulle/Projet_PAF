@@ -87,6 +87,12 @@ public class Document implements Serializable{
 		return "Document [IdDocument=" + idDocument + ", dateCreation=" + dateCreation + ", nom=" + nom
 				+ ", description=" + description + "]";
 	}
+	public Affaire getAffaire() {
+		return affaire;
+	}
+	public void setAffaire(Affaire affaire) {
+		this.affaire = affaire;
+	}
 	
 	
 
