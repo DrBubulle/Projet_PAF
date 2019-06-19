@@ -62,9 +62,9 @@ public class Tribunal implements Serializable {
 		this.region = region;
 	}
 
-	public List<Tache> getTaches() {
-		return taches;
-	}
+//	public List<Tache> getTaches() {
+//		return taches;
+//	}
 
 	public void setTaches(List<Tache> taches) {
 		this.taches = taches;

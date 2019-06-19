@@ -82,9 +82,9 @@ public class Tache implements Serializable {
 	public void setPhases(List<Phase> phases) {
 		this.phases = phases;
 	}
-	public List<Utilisateur> getUtilisateurs() {
-		return utilisateurs;
-	}
+//	public List<Utilisateur> getUtilisateurs() {
+//		return utilisateurs;
+//	}
 	public void setUtilisateurs(List<Utilisateur> utilisateurs) {
 		this.utilisateurs = utilisateurs;
 	}
@@ -123,9 +123,9 @@ public class Tache implements Serializable {
 		return "Tache [dateCreation=" + dateCreation + ", titre=" + titre + ", description=" + description
 				+ ", statutAudience=" + statutAudience + "]";
 	}
-	public Affaire getAffaire() {
-		return affaire;
-	}
+//	public Affaire getAffaire() {
+//		return affaire;
+//	}
 	public void setAffaire(Affaire affaire) {
 		this.affaire = affaire;
 	}
