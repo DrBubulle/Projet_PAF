@@ -2,6 +2,7 @@ package com.inti.formation.Model;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -29,7 +30,7 @@ public class Document implements Serializable{
 	private String nom;
 	private String description;
 	
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name="idAffaire")
 	private Affaire affaire;
 	

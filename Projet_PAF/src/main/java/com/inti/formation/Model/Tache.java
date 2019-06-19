@@ -3,6 +3,7 @@ package com.inti.formation.Model;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -31,18 +32,18 @@ public class Tache implements Serializable {
 	private String description;
 	private boolean statutAudience;
 	
-	@ManyToMany (mappedBy="taches")
+	@ManyToMany (mappedBy="taches", cascade = CascadeType.PERSIST)
 	private List <Utilisateur> utilisateurs;
 	
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name="idAffaire")
 	private Affaire affaire;
 	
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name="idTribunal")
 	private Tribunal tribunal;
 	
-	@OneToMany(mappedBy="tache")
+	@OneToMany(mappedBy="tache", cascade = CascadeType.REMOVE)
 	private List<Phase> phases;
 	
 	public Tache() {

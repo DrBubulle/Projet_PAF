@@ -3,6 +3,7 @@ package com.inti.formation.Model;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -33,7 +34,7 @@ public class Utilisateur implements Serializable{
 	private String prenom;
 	
 
-	@ManyToMany
+	@ManyToMany(cascade = CascadeType.PERSIST)
 	@JoinTable(name="TacheUtil", joinColumns=@JoinColumn(name="idTache"),
 	inverseJoinColumns=@JoinColumn(name="idUtilisateur"))
 	private List<Tache> taches;

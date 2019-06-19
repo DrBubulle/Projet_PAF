@@ -3,6 +3,7 @@ package com.inti.formation.Model;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -27,7 +28,7 @@ public class Tribunal implements Serializable {
 	private double tel;
 	private String region;
 	
-	@OneToMany(mappedBy="tribunal")
+	@OneToMany(mappedBy="tribunal", cascade = CascadeType.PERSIST)
 	private List<Tache> taches;
 	
 	

@@ -3,6 +3,7 @@ package com.inti.formation.Model;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -30,10 +31,10 @@ public class Affaire implements Serializable {
 	private String description;
 	private int status;
 	
-	@OneToMany(mappedBy="affaire")
+	@OneToMany(mappedBy="affaire", cascade = CascadeType.REMOVE)
 	private List<Tache> taches;
 	
-	@OneToMany(mappedBy="affaire")
+	@OneToMany(mappedBy="affaire", cascade = CascadeType.REMOVE)
 	private List<Document> documents;
 	
 	//Constructeurs
