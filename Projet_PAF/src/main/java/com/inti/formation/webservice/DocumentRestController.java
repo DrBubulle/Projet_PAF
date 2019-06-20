@@ -15,7 +15,7 @@ import com.inti.formation.Model.Document;
 
 
 @RestController
-@CrossOrigin("*")
+@CrossOrigin("http://localhost:4200")
 @RequestMapping(value="/apiDocument")
 public class DocumentRestController {
 
@@ -52,4 +52,7 @@ public class DocumentRestController {
 	public List<Document> findAll(){
 		return metier.findAll();
 	}
+
+	
+	
 }

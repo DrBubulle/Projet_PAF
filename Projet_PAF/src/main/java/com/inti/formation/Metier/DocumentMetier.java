@@ -52,8 +52,8 @@ public class DocumentMetier implements IDocumentMetier{
 
 	@Override
 	public List<Document> findAll() {
-		
-		return docRepo.findAll() ;
+		return docRepo.findAll();
 	}
+	
 
 }

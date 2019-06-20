@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.inti.formation.IMetier.IUtilisateurMetier;
 import com.inti.formation.Model.Utilisateur;
+import com.inti.formation.repository.ITacheRepository;
 import com.inti.formation.repository.IUtilisateurRepository;
 
 @Service
@@ -25,6 +26,17 @@ public class UtilisateurMetier implements IUtilisateurMetier{
 
 	public void setUtRepo(IUtilisateurRepository utRepo) {
 		this.utRepo = utRepo;
+	}
+	
+	private ITacheRepository trepo;
+	
+
+	public ITacheRepository getTrepo() {
+		return trepo;
+	}
+
+	public void setTrepo(ITacheRepository trepo) {
+		this.trepo = trepo;
 	}
 
 	@Override
@@ -57,5 +69,8 @@ public class UtilisateurMetier implements IUtilisateurMetier{
 		return utRepo.findAll();
 	}
 
+	public List<Utilisateur> findByEmail(String email) {
+		return utRepo.getByEmail(email);
+	}
 		
 }

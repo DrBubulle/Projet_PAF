@@ -3,6 +3,7 @@ package com.inti.formation.webservice;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -11,7 +12,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.inti.formation.IMetier.IAffaireMetier;
+import com.inti.formation.IMetier.IDocumentMetier;
 import com.inti.formation.Model.Affaire;
+import com.inti.formation.Model.Document;
 
 @RestController
 @CrossOrigin("*")
@@ -28,6 +31,8 @@ public class AffaireRestController {
 	public void setMetier(IAffaireMetier metier) {
 		this.metier = metier;
 	}
+	
+
 
 	@RequestMapping(value = "/ajouterAffaire", method=RequestMethod.POST)
 	public Affaire ajouter(@RequestBody Affaire a) {
@@ -53,5 +58,7 @@ public class AffaireRestController {
 	public List<Affaire> findAll(){
 		return metier.findAll();
 	}
-		
+	
+	
+	
 }
