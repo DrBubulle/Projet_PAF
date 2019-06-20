@@ -22,7 +22,7 @@ public class Tache implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	
-//qssdfgrtyu
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long idTache;

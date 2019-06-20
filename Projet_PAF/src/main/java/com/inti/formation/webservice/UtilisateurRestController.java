@@ -54,4 +54,9 @@ public class UtilisateurRestController {
 	public List<Utilisateur> findAll(){
 		return metier.findAll();
 	}
+	
+	@RequestMapping(value="/Eutilisateur/{Email}", method=RequestMethod.GET)
+	public List<Utilisateur> getByEmail(@PathVariable("Email") String email){
+		return metier.findByEmail(email);
+	}
 }
