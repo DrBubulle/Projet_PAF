@@ -113,6 +113,48 @@ public class Utilisateur implements Serializable{
 				+ prenom + "]";
 	}
 	
+///////////////Ajout attribue mot de passe
+	
+	private String mdpUtilisateur;
+
+	public String getMdpUtilisateur() {
+		return mdpUtilisateur;
+	}
+
+	public void setMdpUtilisateur(String mdpUtilisateur) {
+		this.mdpUtilisateur = mdpUtilisateur;
+	}
+
+	public Utilisateur(long idUtilisateur, String email, String nom, String prenom, List<Tache> taches,
+			String mdpUtilisateur) {
+		super();
+		this.idUtilisateur = idUtilisateur;
+		this.email = email;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.taches = taches;
+		this.mdpUtilisateur = mdpUtilisateur;
+	}
+
+	public Utilisateur(String email, String nom, String prenom, List<Tache> taches, String mdpUtilisateur) {
+		super();
+		this.email = email;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.taches = taches;
+		this.mdpUtilisateur = mdpUtilisateur;
+	}
+
+	public Utilisateur(String email, String nom, String prenom, String mdpUtilisateur) {
+		super();
+		this.email = email;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.mdpUtilisateur = mdpUtilisateur;
+	}
+
+
+	
 	
 
 	
