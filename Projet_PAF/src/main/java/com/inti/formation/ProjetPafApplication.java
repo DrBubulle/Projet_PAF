@@ -1,7 +1,9 @@
 package com.inti.formation;
 
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,8 +50,7 @@ public class ProjetPafApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
-
-
+		SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd");
 
 		Utilisateur u1 = new Utilisateur(100,"J.Donovan@avocat.com", "Donovan", "James");
 		Utilisateur u2 = new Utilisateur(101,"M.Haller@avocat.fr", "Haller", "Mickey");
@@ -73,10 +74,10 @@ public class ProjetPafApplication implements CommandLineRunner {
 
 		
 
-		Tache ta1 = new Tache("16/11/2018", "Tache 1", "description tache 1", true);
-		Tache ta2 = new Tache("31/4/2017", "Tache 2", "description tache 2", false);
-		Tache ta3 = new Tache("31/1/2018", "Tache 3", "description tache 3", false);
-		Tache ta4 = new Tache("23/9/2015", "Tache 4", "description tache 4", true);
+		Tache ta1 = new Tache("16/11/2019", "Tache 1", "description tache 1", true);
+		Tache ta2 = new Tache("31/04/2019", "Tache 2", "description tache 2", false);
+		Tache ta3 = new Tache("31/01/2019", "Tache 3", "description tache 3", false);
+		Tache ta4 = new Tache("23/09/2015", "Tache 4", "description tache 4", true);
 		Tache ta5 = new Tache("5/12/2017", "Tache 5", "description tache 5", true);
 		Tache ta6 = new Tache("4/9/2017", "Tache 6", "description tache 6", true);
 		Tache ta7 = new Tache("19/2/2018", "Tache 7", "description tache 7", false);
@@ -157,17 +158,29 @@ public class ProjetPafApplication implements CommandLineRunner {
 		tribunalmetier.ajouter(tr7);
 		tribunalmetier.ajouter(tr8);
 	
+		Date date1 = new Date(2019, 06, 25);
+		Date date2 = new Date(2019, 06, 26);
+		Date date3 = new Date(2019, 06, 27);
+		Date date4 = new Date(2019, 06, 28);
 		
-		
-		Phase p1 = new Phase("Phase 1", "31/11/2017", "16/1/2018");
-		Phase p2 = new Phase("Phase 2", "4/11/2017", "25/7/2018");
-		Phase p3 = new Phase("Phase 3", "21/11/2015", "4/8/2017");
-		Phase p4 = new Phase("Phase 4", "29/7/2016", "24/6/2017");
-		Phase p5 = new Phase("Phase 5", "29/2/2016", "1/7/2016");
-		Phase p6 = new Phase("Phase 6", "20/8/2017", "24/11/2018");
-		Phase p7 = new Phase("Phase 7", "29/1/2017", "19/10/2018");
-		Phase p8 = new Phase("Phase 8", "5/9/2015", "1/12/2017");
-		Phase p9 = new Phase("Phase 9", "2/9/2015", "7/9/2016");
+		Phase p1 = new Phase("Phase 1", date1, "16/1/2018");
+		Phase p2 = new Phase("Phase 2", date2, "25/7/2018");
+		Phase p3 = new Phase("Phase 3", date3, "4/8/2017");
+		Phase p4 = new Phase("Phase 4", date4, "24/6/2017");
+		Phase p5 = new Phase("Phase 5", date1, "1/7/2016");
+		Phase p6 = new Phase("Phase 6", date2, "24/11/2018");
+		Phase p7 = new Phase("Phase 7", date3, "19/10/2018");
+		Phase p8 = new Phase("Phase 8", date4, "1/12/2017");
+		Phase p9 = new Phase("Phase 9", date1, "7/9/2016");
+		Phase p10 = new Phase("Phase 10", date2, "16/1/2018");
+		Phase p11 = new Phase("Phase 11", date3, "25/7/2018");
+		Phase p12 = new Phase("Phase 12", date4, "4/8/2017");
+		Phase p13 = new Phase("Phase 13", date1, "24/6/2017");
+		Phase p14 = new Phase("Phase  14", date2, "1/7/2016");
+		Phase p15 = new Phase("Phase 15", date3, "24/11/2018");
+		Phase p16 = new Phase("Phase 16", date4, "19/10/2018");
+		Phase p17 = new Phase("Phase 17", date1, "1/12/2017");
+		Phase p18 = new Phase("Phase 18", date2, "7/9/2016");
 
 		phasemetier.ajouter(p1);
 		phasemetier.ajouter(p2);
@@ -178,8 +191,42 @@ public class ProjetPafApplication implements CommandLineRunner {
 		phasemetier.ajouter(p7);
 		phasemetier.ajouter(p8);
 		phasemetier.ajouter(p9);
+		phasemetier.ajouter(p10);
+		phasemetier.ajouter(p11);
+		phasemetier.ajouter(p12);
+		phasemetier.ajouter(p13);
+		phasemetier.ajouter(p14);
+		phasemetier.ajouter(p15);
+		phasemetier.ajouter(p16);
+		phasemetier.ajouter(p17);
+		phasemetier.ajouter(p18);
 		
 //////////////////////////////////////////////////
+		
+		ta1 = tachemetier.findOne((long) 1);
+		ta2 = tachemetier.findOne((long) 2);
+		System.out.println("//////////////////////////////////////////////////////////////////////////////////");
+		System.out.println(ta2);
+		System.out.println("//////////////////////////////////////////////////////////////////////////////////");
+		ta3 = tachemetier.findOne((long) 3);
+		ta4 = tachemetier.findOne((long) 4);
+		ta5 = tachemetier.findOne((long) 5);
+		ta6 = tachemetier.findOne((long) 6);
+		ta7 = tachemetier.findOne((long) 7);
+		ta8 = tachemetier.findOne((long) 8);
+		ta9 = tachemetier.findOne((long) 9);	
+		
+		List<Tache> listTaUt20= new ArrayList<Tache>();
+		listTaUt20.add(ta1);
+		listTaUt20.add(ta2);
+		listTaUt20.add(ta3);
+		List<Tache> listTaUt15 = new ArrayList<Tache>();
+		listTaUt15.add(ta1);
+		listTaUt15.add(ta2);
+		listTaUt15.add(ta3);
+		listTaUt15.add(ta4);
+		listTaUt15.add(ta5);
+		
 		List<Tache> listTaUt1= new ArrayList<Tache>();
 		listTaUt1.add(ta1);
 		listTaUt1.add(ta2);
@@ -200,7 +247,7 @@ public class ProjetPafApplication implements CommandLineRunner {
 		listTaUt3.add(ta7);
 		listTaUt3.add(ta8);
 		List<Tache> listTaUt4= new ArrayList<Tache>();
-		listTaUt4.add(ta1);
+		listTaUt4.add(ta9);
 		List<Tache> listTaUt5= new ArrayList<Tache>();
 		listTaUt5.add(ta1);
 		listTaUt5.add(ta2);
@@ -208,13 +255,22 @@ public class ProjetPafApplication implements CommandLineRunner {
 		listTaUt6.add(ta3);
 		listTaUt6.add(ta4);
 		List<Tache> listTaUt7= new ArrayList<Tache>();
+		listTaUt7.add(ta5);
 		listTaUt7.add(ta6);
-		listTaUt7.add(ta7);
 		List<Tache> listTaUt8= new ArrayList<Tache>();
-		listTaUt8.add(ta8);
+		listTaUt8.add(ta7);
 		List<Tache> listTaUt9= new ArrayList<Tache>();
-		listTaUt9.add(ta9);
+		listTaUt9.add(ta8);
 		
+		u1 = utilisateurmetier.findOne((long) 1);
+		u2 = utilisateurmetier.findOne((long) 2);
+		u3 = utilisateurmetier.findOne((long) 3);
+		u4 = utilisateurmetier.findOne((long) 4);
+		u5 = utilisateurmetier.findOne((long) 5);
+		u6 = utilisateurmetier.findOne((long) 6);
+		u7 = utilisateurmetier.findOne((long) 7);
+		u8 = utilisateurmetier.findOne((long) 7);
+		u9 = utilisateurmetier.findOne((long) 9);		
 		
 		u1.setTaches(listTaUt1);
 		utilisateurmetier.update(u1);
@@ -235,6 +291,7 @@ public class ProjetPafApplication implements CommandLineRunner {
 		u9.setTaches(listTaUt9);
 		utilisateurmetier.update(u9);
 		
+		
 		List<Tache> listTaAf1= new ArrayList<Tache>();
 		listTaAf1.add(ta1);
 		listTaAf1.add(ta2);
@@ -254,6 +311,15 @@ public class ProjetPafApplication implements CommandLineRunner {
 		List<Tache> listTaAf8= new ArrayList<Tache>();
 		List<Tache> listTaAf9= new ArrayList<Tache>();
 		
+		a1 = affairemetier.findOne((long) 10);
+		a2 = affairemetier.findOne((long) 11);
+		a3 = affairemetier.findOne((long) 12);
+		a4 = affairemetier.findOne((long) 13);
+		a5 = affairemetier.findOne((long) 14);
+		a6 = affairemetier.findOne((long) 15);
+		a7 = affairemetier.findOne((long) 16);
+		a8 = affairemetier.findOne((long) 17);
+		a9 = affairemetier.findOne((long) 18);
 		
 		a1.setTaches(listTaAf1);
 		affairemetier.update(a1);
@@ -293,6 +359,16 @@ public class ProjetPafApplication implements CommandLineRunner {
 		List<Tache> listTaTr7= new ArrayList<Tache>();
 		List<Tache> listTaTr8= new ArrayList<Tache>();
 		
+		tr1 = tribunalmetier.findOne((long) 28);
+		tr2 = tribunalmetier.findOne((long) 29);
+		tr3 = tribunalmetier.findOne((long) 30);
+		tr4 = tribunalmetier.findOne((long) 31);
+		tr5 = tribunalmetier.findOne((long) 32);
+		tr6 = tribunalmetier.findOne((long) 33);
+		tr7 = tribunalmetier.findOne((long) 34);
+		tr8 = tribunalmetier.findOne((long) 35);
+
+		
 		tr1.setTaches(listTaTr1);
 		tribunalmetier.update(tr1);
 		tr2.setTaches(listTaTr2);
@@ -310,45 +386,72 @@ public class ProjetPafApplication implements CommandLineRunner {
 		tr8.setTaches(listTaTr8);
 		tribunalmetier.update(tr8);
 		
+		p1 = phasemetier.findOne((long) 36);
+		p2 = phasemetier.findOne((long) 37);
+		p3 = phasemetier.findOne((long) 38);
+		p4 = phasemetier.findOne((long) 39);
+		p5 = phasemetier.findOne((long) 40);
+		p6 = phasemetier.findOne((long) 41);
+		p7 = phasemetier.findOne((long) 42);
+		p8 = phasemetier.findOne((long) 43);
+		p9 = phasemetier.findOne((long) 44);
+		p10 = phasemetier.findOne((long) 45);
+		p11 = phasemetier.findOne((long) 46);
+		p12 = phasemetier.findOne((long) 47);
+		p13 = phasemetier.findOne((long) 48);
+		p14 = phasemetier.findOne((long) 49);
+		p15 = phasemetier.findOne((long) 50);
+		p16 = phasemetier.findOne((long) 51);
+		p17 = phasemetier.findOne((long) 52);
+		p18 = phasemetier.findOne((long) 53);
 		
 		
-		List<Phase> listPhTa1= new ArrayList<Phase>();
-		listPhTa1.add(p1);
-		List<Phase> listPhTa2= new ArrayList<Phase>();
-		listPhTa1.add(p2);
-		listPhTa1.add(p3);
-		listPhTa1.add(p4);
-		List<Phase> listPhTa3= new ArrayList<Phase>();
-		listPhTa1.add(p5);
-		listPhTa1.add(p6);
-		List<Phase> listPhTa4= new ArrayList<Phase>();
-		listPhTa1.add(p7);
-		List<Phase> listPhTa5= new ArrayList<Phase>();
-		listPhTa1.add(p8);
-		List<Phase> listPhTa6= new ArrayList<Phase>();
-		listPhTa1.add(p9);
-		List<Phase> listPhTa7= new ArrayList<Phase>();
-		List<Phase> listPhTa8= new ArrayList<Phase>();
-		List<Phase> listPhTa9= new ArrayList<Phase>();
 		
-		ta1.setPhases(listPhTa1);
-		tachemetier.update(ta1);
-		ta2.setPhases(listPhTa2);
-		tachemetier.update(ta2);
-		ta3.setPhases(listPhTa3);
-		tachemetier.update(ta3);
-		ta4.setPhases(listPhTa4);
-		tachemetier.update(ta4);
-		ta5.setPhases(listPhTa5);
-		tachemetier.update(ta5);
-		ta6.setPhases(listPhTa6);
-		tachemetier.update(ta6);
-		ta7.setPhases(listPhTa7);
-		tachemetier.update(ta7);
-		ta8.setPhases(listPhTa8);
-		tachemetier.update(ta8);
-		ta9.setPhases(listPhTa9);
-		tachemetier.update(ta9);
+//		List<Phase> listPhTa1= new ArrayList<Phase>();
+//		listPhTa1.add(p1);
+//		listPhTa1.add(p18);
+//		listPhTa1.add(p17);
+//		List<Phase> listPhTa2= new ArrayList<Phase>();
+//		listPhTa1.add(p2);
+//		listPhTa1.add(p3);
+//		listPhTa1.add(p4);
+//		List<Phase> listPhTa3= new ArrayList<Phase>();
+//		listPhTa1.add(p5);
+//		listPhTa1.add(p6);
+//		List<Phase> listPhTa4= new ArrayList<Phase>();
+//		listPhTa1.add(p7);
+//		List<Phase> listPhTa5= new ArrayList<Phase>();
+//		listPhTa1.add(p8);
+//		List<Phase> listPhTa6= new ArrayList<Phase>();
+//		listPhTa1.add(p9);
+//		listPhTa1.add(p11);
+//		List<Phase> listPhTa7= new ArrayList<Phase>();
+//		listPhTa1.add(p12);
+//		listPhTa1.add(p13);
+//		List<Phase> listPhTa8= new ArrayList<Phase>();
+//		listPhTa1.add(p14);
+//		listPhTa1.add(p15);
+//		List<Phase> listPhTa9= new ArrayList<Phase>();
+//		listPhTa1.add(p16);
+		
+//		ta1.setPhases(listPhTa1);
+//		tachemetier.update(ta1);
+//		ta2.setPhases(listPhTa2);
+//		tachemetier.update(ta2);
+//		ta3.setPhases(listPhTa3);
+//		tachemetier.update(ta3);
+//		ta4.setPhases(listPhTa4);
+//		tachemetier.update(ta4);
+//		ta5.setPhases(listPhTa5);
+//		tachemetier.update(ta5);
+//		ta6.setPhases(listPhTa6);
+//		tachemetier.update(ta6);
+//		ta7.setPhases(listPhTa7);
+//		tachemetier.update(ta7);
+//		ta8.setPhases(listPhTa8);
+//		tachemetier.update(ta8);
+//		ta9.setPhases(listPhTa9);
+//		tachemetier.update(ta9);
 		
 		
 		
@@ -433,6 +536,16 @@ public class ProjetPafApplication implements CommandLineRunner {
 	p7.setTache(ta7);
 	p8.setTache(ta8);
 	p9.setTache(ta9);
+	p10.setTache(ta1);
+	p11.setTache(ta2);
+	p12.setTache(ta3);
+	p13.setTache(ta4);
+	p14.setTache(ta5);
+	p15.setTache(ta6);
+	p16.setTache(ta7);
+	p17.setTache(ta8);
+	p18.setTache(ta9);
+	
 	phasemetier.update(p1);
 	phasemetier.update(p2);
 	phasemetier.update(p3);
@@ -442,6 +555,15 @@ public class ProjetPafApplication implements CommandLineRunner {
 	phasemetier.update(p7);
 	phasemetier.update(p8);
 	phasemetier.update(p9);
+	phasemetier.update(p10);
+	phasemetier.update(p11);
+	phasemetier.update(p12);
+	phasemetier.update(p13);
+	phasemetier.update(p14);
+	phasemetier.update(p15);
+	phasemetier.update(p16);
+	phasemetier.update(p17);
+	phasemetier.update(p18);
 	
 	d1.setAffaire(a1);
 	d2.setAffaire(a2);
@@ -461,10 +583,21 @@ public class ProjetPafApplication implements CommandLineRunner {
 	documentmetier.update(d7);
 	documentmetier.update(d8);
 	documentmetier.update(d9);
-		
 	
+//	System.out.println("//////////////////////////////////////////////////////////////////////////////////");
+//	System.out.println(ta1);
+//	System.out.println("//////////////////////////////////////////////////////////////////////////////////");
+//	System.out.println(listTaUt15);
+//	System.out.println("//////////////////////////////////////////////////////////////////////////////////");
+//	System.out.println(listTaUt20);
+//	System.out.println("//////////////////////////////////////////////////////////////////////////////////");
+//	System.out.println(listTaUt3);
+//	System.out.println("//////////////////////////////////////////////////////////////////////////////////");
+//	System.out.println(u1);
+//	System.out.println("//////////////////////////////////////////////////////////////////////////////////");
+//	System.out.println(u9);
+//	System.out.println("//////////////////////////////////////////////////////////////////////////////////");
 	}
-
 
 
 }

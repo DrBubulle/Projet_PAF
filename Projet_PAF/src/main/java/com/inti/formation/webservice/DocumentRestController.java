@@ -15,8 +15,8 @@ import com.inti.formation.Model.Document;
 
 
 @RestController
-@CrossOrigin("http://localhost:4200")
-@RequestMapping(value="/apiDocument")
+@CrossOrigin("*")
+@RequestMapping("/apiDocument")
 public class DocumentRestController {
 
 	@Autowired

@@ -1,6 +1,7 @@
 package com.inti.formation.Model;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -9,7 +10,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
@@ -26,7 +30,11 @@ public class Phase implements Serializable {
 	private long idPhase;
 	
 	private String nom;
-	private String dateDebut;
+	
+	@Temporal(TemporalType.DATE)
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+//	@LastModifiedDate
+	private Date dateDebut;
 	private String dateFin;
 	
 	@ManyToOne(cascade = CascadeType.PERSIST)
@@ -37,7 +45,7 @@ public class Phase implements Serializable {
 	public Phase() {
 		super();
 	}
-	public Phase(long idPhase, String nom, String dateDebut, String dateFin) {
+	public Phase(long idPhase, String nom, Date dateDebut, String dateFin) {
 		super();
 		this.idPhase = idPhase;
 		this.nom = nom;
@@ -47,13 +55,13 @@ public class Phase implements Serializable {
 	
 	
 	
-	public Phase(String nom, String dateDebut, String dateFin) {
+	public Phase(String nom, Date dateDebut, String dateFin) {
 		super();
 		this.nom = nom;
 		this.dateDebut = dateDebut;
 		this.dateFin = dateFin;
 	}
-	public Phase(String nom, String dateDebut, String dateFin, Tache tache) {
+	public Phase(String nom, Date dateDebut, String dateFin, Tache tache) {
 		super();
 		this.nom = nom;
 		this.dateDebut = dateDebut;
@@ -73,10 +81,10 @@ public class Phase implements Serializable {
 	public void setNom(String nom) {
 		this.nom = nom;
 	}
-	public String getDateDebut() {
+	public Date getDateDebut() {
 		return dateDebut;
 	}
-	public void setDateDebut(String dateDebut) {
+	public void setDateDebut(Date dateDebut) {
 		this.dateDebut = dateDebut;
 	}
 	public String getDateFin() {

@@ -34,7 +34,7 @@ public class Utilisateur implements Serializable{
 	private String prenom;
 	
 
-	@ManyToMany(cascade = CascadeType.PERSIST)
+	@ManyToMany (cascade = CascadeType.PERSIST)
 	@JoinTable(name="TacheUtil", joinColumns=@JoinColumn(name="idTache"),
 	inverseJoinColumns=@JoinColumn(name="idUtilisateur"))
 	private List<Tache> taches;
@@ -109,12 +109,13 @@ public class Utilisateur implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Utilisateur [IdUtilisateur=" + idUtilisateur + ", email=" + email + ", nom=" + nom + ", prenom="
-				+ prenom + "]";
+		return "Utilisateur [idUtilisateur=" + idUtilisateur + ", email=" + email + ", nom=" + nom + ", prenom="
+				+ prenom + "," + taches + ", mdpUtilisateur=" + mdpUtilisateur + "]";
 	}
 	
 ///////////////Ajout attribue mot de passe
 	
+
 	private String mdpUtilisateur;
 
 	public String getMdpUtilisateur() {

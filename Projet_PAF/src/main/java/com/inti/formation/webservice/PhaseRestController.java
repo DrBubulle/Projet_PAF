@@ -15,7 +15,7 @@ import com.inti.formation.Model.Phase;
 
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin("*")
 @RequestMapping("/apiPhase")
 public class PhaseRestController {
 	

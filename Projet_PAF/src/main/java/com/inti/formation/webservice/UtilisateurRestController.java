@@ -16,7 +16,7 @@ import com.inti.formation.Model.Utilisateur;
 
 @RestController
 @CrossOrigin("*")
-@RequestMapping(value="/apiUtilisateur")
+@RequestMapping("/apiUtilisateur")
 public class UtilisateurRestController {
 
 	@Autowired

@@ -28,16 +28,16 @@ public class UtilisateurMetier implements IUtilisateurMetier{
 		this.utRepo = utRepo;
 	}
 	
-	private ITacheRepository trepo;
-	
-
-	public ITacheRepository getTrepo() {
-		return trepo;
-	}
-
-	public void setTrepo(ITacheRepository trepo) {
-		this.trepo = trepo;
-	}
+//	private ITacheRepository trepo;
+//	
+//
+//	public ITacheRepository getTrepo() {
+//		return trepo;
+//	}
+//
+//	public void setTrepo(ITacheRepository trepo) {
+//		this.trepo = trepo;
+//	}
 
 	@Override
 	public Utilisateur ajouter(Utilisateur a) {

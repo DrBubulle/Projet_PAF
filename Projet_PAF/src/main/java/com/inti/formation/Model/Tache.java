@@ -119,12 +119,13 @@ public class Tache implements Serializable {
 	public void setStatutAudience(boolean statutAudience) {
 		this.statutAudience = statutAudience;
 	}
-	@Override
+
+@Override
 	public String toString() {
-		return "Tache [dateCreation=" + dateCreation + ", titre=" + titre + ", description=" + description
-				+ ", statutAudience=" + statutAudience + "]";
+		return " [idTache=" + idTache + ", dateCreation=" + dateCreation + ", titre=" + titre + ", description="
+				+ description + ", statutAudience=" + statutAudience + "]";
 	}
-//	public Affaire getAffaire() {
+	//	public Affaire getAffaire() {
 //		return affaire;
 //	}
 	public void setAffaire(Affaire affaire) {
