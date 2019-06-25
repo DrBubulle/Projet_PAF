@@ -2,6 +2,7 @@ package com.inti.formation.webservice;
 
 import java.util.List;
 
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -11,12 +12,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.inti.formation.IMetier.IUtilisateurMetier;
+import com.inti.formation.Model.Phase;
+import com.inti.formation.Model.Tache;
 import com.inti.formation.Model.Utilisateur;
 
 
 @RestController
 @CrossOrigin("*")
-@RequestMapping("/apiUtilisateur")
+@RequestMapping(value="/apiUtilisateur")
 public class UtilisateurRestController {
 
 	@Autowired
@@ -55,8 +58,25 @@ public class UtilisateurRestController {
 		return metier.findAll();
 	}
 	
-	@RequestMapping(value="/Eutilisateur/{Email}", method=RequestMethod.GET)
-	public List<Utilisateur> getByEmail(@PathVariable("Email") String email){
+	@RequestMapping(value="/utilisateurId/{Email}", method=RequestMethod.GET)
+	public List<Long> getByEmail(@PathVariable("Email") String email){
 		return metier.findByEmail(email);
+	}
+	
+	@RequestMapping(value="/Eutilisateur/{mdp}/{Email}", method=RequestMethod.GET)
+	public boolean mdpVerification(@PathVariable("mdp") String mdp ,@PathVariable("Email") String email){
+		List<String> mdps = metier.getMdpByEmail(email);
+		System.out.println(mdps);
+		for (String mdp_utilisateur : mdps) {
+			if (mdp_utilisateur.equals(mdp)) {
+				return true;
+			}
+		}
+		return false ;
+	}
+	
+	@RequestMapping(value="phasesUt/{idUtilisateur}", method=RequestMethod.GET)
+	public String getPhasesByIdUtilisateur(@PathVariable("idUtilisateur")long idUtilisateur) {
+		return metier.getPhasesByIdUtilisateur(idUtilisateur);
 	}
 }
